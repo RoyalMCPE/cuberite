@@ -45,6 +45,7 @@ matrix:
 
     # GCC 7.4 - Release, CMake 3.12
     - compiler: gcc
+      before_install: *use-cmake
       env: *Release
 
     # GCC 7.4 - Debug
