@@ -8,7 +8,7 @@ ARGS="-header-filter $REGEX -quiet -export-fixes $FIXES_FILE "$@" $REGEX"
 
 mkdir -p tidy-build
 cd tidy-build
-cmake --target Cuberite -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+cmake --target Cuberite -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DPRECOMPILE_HEADERS=OFF ..
 
 if run-clang-tidy $ARGS; then
 	echo "clang-tidy: No violations found"
